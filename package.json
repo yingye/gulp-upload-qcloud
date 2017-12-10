@@ -1,0 +1,37 @@
+{
+  "name": "gulp-upload-qcloud",
+  "version": "1.0.0",
+  "description": "cos upload gulp plugin",
+  "main": "index.js",
+  "dependencies": {
+    "cos-nodejs-sdk-v5": "^2.0.20",
+    "gulp-util": "^3.0.8",
+    "q": "^1.5.1",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yingye/gulp-upload-qcloud.git"
+  },
+  "keywords": [
+    "gulp",
+    "gulpjs",
+    "upload",
+    "qcloud",
+    "tengxunyun",
+    "cos",
+    "cdn"
+  ],
+  "author": "yingye",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yingye/gulp-upload-qcloud/issues"
+  },
+  "homepage": "https://github.com/yingye/gulp-upload-qcloud#readme"
+}
