@@ -50,7 +50,6 @@ module.exports = function (config) {
           Key: fileKey
         }, function (err, data) {
           if (err) {
-            log('check-err', err);
             callback(false);
           } else {
             log('Exist ' + fileKey);
