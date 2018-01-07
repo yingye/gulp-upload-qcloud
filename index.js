@@ -2,6 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var gutil = require('gulp-util');
 var through2 = require('through2');
+var assign = require('object-assign')
 var Q = require('q');
 var COS = require('cos-nodejs-sdk-v5');
 
@@ -10,14 +11,15 @@ var colors = gutil.colors;
 
 module.exports = function (config) {
   config = config || {};
-  config.AppId = config.AppId || '';
-  config.SecretId = config.SecretId || '';
-  config.SecretKey = config.SecretKey || '';
-  config.Bucket = config.Bucket || '';
-  config.Region = config.Region || '';
-  config.Prefix = config.Prefix || '';
-  config.OverWrite = config.OverWrite || false;
-  // config.Headers = config.Headers || false;
+  config = assign({
+    AppId: '',
+    SecretId: '',
+    SecretKey: '',
+    Bucket: '',
+    Region: '',
+    Prefix: '',
+    OverWrite: false
+  }, config);
 
   var existFiles = 0;
   var uploadedFiles = 0;

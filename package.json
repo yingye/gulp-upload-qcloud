@@ -1,11 +1,12 @@
 {
   "name": "gulp-upload-qcloud",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "cos upload gulp plugin",
   "main": "index.js",
   "dependencies": {
     "cos-nodejs-sdk-v5": "^2.0.20",
     "gulp-util": "^3.0.8",
+    "object-assign": "^4.1.1",
     "q": "^1.5.1",
     "through2": "^2.0.3"
   },
