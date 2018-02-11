@@ -21,13 +21,16 @@ module.exports = function (config) {
     OverWrite: false
   }, config);
 
+  if (config.Bucket.indexOf('-') === -1) {
+    config.Bucket += '-' + config.AppId;
+  }
+
   var existFiles = 0;
   var uploadedFiles = 0;
   var uploadedFail = 0;
   var tasks = [];
 
   var cos = new COS({
-    AppId: config.AppId,
     SecretId: config.SecretId,
     SecretKey: config.SecretKey
   });

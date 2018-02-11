@@ -46,6 +46,27 @@ There are 7 options:
 * `Prefix`(string): 自定义文件前缀，例如本地文件路径 img.png ，设置了 `Prefix: 'demo'`，最终腾讯云路径为 `demo/img.png`，默认为空。
 * `OverWrite`(string): 是否覆盖同名文件，默认 false。
 
+##### ! `AppId` 和 `Bucket` 的说明：
+
+腾讯云官方 api 修改，去掉 `AppId` 概念，`Bucket` 需要传入这样的格式 `test-1250000000`。本插件，兼容两种配置方式，示例如下：
+
+```js
+// old api options
+const options = {
+  AppId: 'your AppId',
+  Bucket: 'old Bucket',
+  ...
+};
+```
+
+```js
+// new api options
+const options = {
+  Bucket: 'AppId-Bucket',
+  ...
+};
+```
+
 ## TIPS
 
 该插件基于 [腾讯云 COS Nodejs SDK V5](https://github.com/tencentyun/cos-nodejs-sdk-v5) 构建，可参考腾讯云官方文档 [Node.js SDK](https://cloud.tencent.com/document/product/436/8629)。
