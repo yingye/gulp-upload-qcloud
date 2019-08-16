@@ -22,7 +22,10 @@ gulp.task('upload', () => {
       SecretKey: 'STRING_VALUE',
       Bucket: 'STRING_VALUE',
       Region: 'STRING_VALUE',
-      Prefix: 'demo/sub'
+      Prefix: 'demo/sub',
+      Headers: {
+        CacheControl: 'max-age=31536000'
+      },
       OverWrite: false
     }));
 });
@@ -44,6 +47,7 @@ There are 7 options:
 * `Bucket`(string): 到 [COS 对象存储控制台](https://console.cloud.tencent.com/cos4) 创建存储桶，得到 Bucket（存储桶名称） 和 Region（地域名称）。
 * `Region`(string): Bucket 所在区域。枚举值请见：[Bucket 地域信息](https://cloud.tencent.com/document/product/436/6224)。
 * `Prefix`(string): 自定义文件前缀，例如本地文件路径 img.png ，设置了 `Prefix: 'demo'`，最终腾讯云路径为 `demo/img.png`，默认为空。
+* `Headers(object)`: 设置头信息，具体 API 参考[简单上传-参数说明](https://cloud.tencent.com/document/product/436/35649)。
 * `OverWrite`(string): 是否覆盖同名文件，默认 false。
 
 ##### ! `AppId` 和 `Bucket` 的说明：
